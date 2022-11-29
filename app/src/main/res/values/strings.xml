@@ -8,26 +8,26 @@
     <string name="previous">Previous</string>
 
     <!--    String used for calculate -->
-    <string name="button1">Back</string>
-    <string name="button2">+/-</string>
-    <string name="button3">AC</string>
-    <string name="button4">%</string>
-    <string name="button5">/</string>
-    <string name="button6">7</string>
-    <string name="button7">8</string>
-    <string name="button8">9</string>
-    <string name="button9">*</string>
-    <string name="button10">4</string>
-    <string name="button11">5</string>
-    <string name="button12">6</string>
-    <string name="button13">-</string>
-    <string name="button14">1</string>
-    <string name="button15">2</string>
-    <string name="button16">3</string>
-    <string name="button17">+</string>
-    <string name="button18">0</string>
-    <string name="button19">,</string>
-    <string name="button20">=</string>
+    <string name="buttonBack">Back</string>
+    <string name="buttonNegatif">+/-</string>
+    <string name="buttonAC">AC</string>
+    <string name="buttonPourcent">%</string>
+    <string name="buttonDivision">/</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="buttonMultiplication">*</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="buttonSoustraction">-</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="buttonAddition">+</string>
+    <string name="button0">0</string>
+    <string name="buttonVirgule">,</string>
+    <string name="buttonEgale">=</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
