@@ -1,4 +1,4 @@
-package com.example.examenfinal;
+package com.example.drawertest;
 
 import org.junit.Test;
 

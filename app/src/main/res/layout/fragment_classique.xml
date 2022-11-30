@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment"
+    tools:context=".ui.classique.ClassiqueFragment"
     android:orientation="horizontal"
     android:background="@color/black">
 
@@ -13,13 +13,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="bottom">
-
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -237,12 +230,12 @@
                 android:layout_gravity="bottom">
 
                 <Button
-                    android:id="@+id/buttonAC"
+                    android:id="@+id/buttonBack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_marginLeft="4dp"
-                    android:text="@string/buttonAC"
+                    android:text="@string/buttonBack"
                     android:layout_gravity="center"
                     android:backgroundTint="@color/red"/>
                 <Button
