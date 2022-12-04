@@ -7,8 +7,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.drawertest.ui.clavier.ClavierFragment;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public CalculiClass eval;
     public int result_of_calc=0;
 
-
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //addKeyListener();
 
 
-            setSupportActionBar(binding.appBarMain.toolbar);
+        setSupportActionBar(binding.appBarMain.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -84,8 +85,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onKeyUp (int keyCode, KeyEvent event) {
         Log.v("VAL", "up keycode: " + event.getKeyCode());
         if (keyCode==66){
-            result_of_calc=eval.evaluate(calcInput.getText().toString());
-            Log.v("Val:",Integer.toString(result_of_calc));
+            ClavierFragment.calcul();
+//            result_of_calc=eval.evaluate(calcInput.getText().toString());
+//            Log.v("Val:",Integer.toString(result_of_calc));
         }
         return super.onKeyUp(keyCode, event);
     }

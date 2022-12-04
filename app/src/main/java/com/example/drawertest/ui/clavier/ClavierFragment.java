@@ -1,22 +1,30 @@
 package com.example.drawertest.ui.clavier;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.drawertest.CalculiClass;
 import com.example.drawertest.R;
 import com.example.drawertest.databinding.FragmentClavierBinding;
 
 public class ClavierFragment extends Fragment {
 
     private FragmentClavierBinding binding;
-    private EditText input;
+    private static EditText input;
+    private static TextView result;
+    public static CalculiClass eval;
+    public static int result_of_calc=0;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -26,8 +34,12 @@ public class ClavierFragment extends Fragment {
         binding = FragmentClavierBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        eval = new CalculiClass();
+
         input = (EditText) root.findViewById(R.id.calc_input);
         input.requestFocus();
+
+        result = (TextView) root.findViewById(R.id.result);
 
         return root;
     }
@@ -36,5 +48,11 @@ public class ClavierFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public static void calcul(){
+        result_of_calc = eval.evaluate(input.getText().toString());
+        Log.v("Alexia:",Integer.toString(result_of_calc));
+        result.setText(Integer.toString(result_of_calc));
     }
 }
