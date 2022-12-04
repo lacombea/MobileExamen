@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.drawertest.R;
 import com.example.drawertest.databinding.FragmentClavierBinding;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class ClavierFragment extends Fragment {
 
@@ -27,7 +26,7 @@ public class ClavierFragment extends Fragment {
         binding = FragmentClavierBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        input = (EditText) root.findViewById(R.id.inputText);
+        input = (EditText) root.findViewById(R.id.calc_input);
         input.requestFocus();
 
         return root;

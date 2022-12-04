@@ -16,7 +16,7 @@
         android:layout_gravity="center">
 
         <EditText
-            android:id="@+id/inputText"
+            android:id="@+id/calc_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Calcul input: "
@@ -25,10 +25,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+        android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:layout_gravity="center"
         android:text="Résultat"
-        android:layout_gravity="center"/>
+        android:textColor="@color/white" />
 
 </LinearLayout>
