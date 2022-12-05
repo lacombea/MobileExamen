@@ -14,13 +14,20 @@ public class CalculiClass {
     }*/
 
 
-    public static int evaluate(String str) {
+    public static Integer evaluate(String str) {
 
         char[] index = str.toCharArray();
 
         Stack<Integer> val = new Stack<Integer>();
 
         Stack<Character> operators = new Stack<Character>();
+
+        if (index[0] == '+' ||
+                index[0] == '-' ||
+                index[0] == '*' ||
+                index[0] == '/'){
+            return null;
+        }
 
         for (int i = 0; i < index.length; i++) {
 
@@ -54,6 +61,13 @@ public class CalculiClass {
                     index[i] == '*' ||
                     index[i] == '/')
             {
+                if (index[i+1] == '+' ||
+                        index[i+1] == '-' ||
+                        index[i+1] == '*' ||
+                        index[i+1] == '/'){
+                    return null;
+                }
+
                 while (!operators.empty() &&
                         hasPrecedence(index[i],
                                 operators.peek()))

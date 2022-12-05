@@ -23,7 +23,7 @@ public class ClavierFragment extends Fragment {
     private static EditText input;
     private static TextView result;
     public static CalculiClass eval;
-    public static int result_of_calc=0;
+    public static Integer result_of_calc=0;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -50,14 +50,17 @@ public class ClavierFragment extends Fragment {
         binding = null;
     }
 
-    public static boolean calcul(){
+    public static Integer calcul(){
         String text = input.getText().toString();
         if (text == null || text.length() == 0) {
-            return false;
+            return 0;
         }
         result_of_calc = eval.evaluate(input.getText().toString());
+        if (result_of_calc==null){
+            return 1;
+        }
         Log.v("Alexia:",Integer.toString(result_of_calc));
         result.setText(Integer.toString(result_of_calc));
-        return true;
+        return 2;
     }
 }

@@ -86,9 +86,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onKeyUp (int keyCode, KeyEvent event) {
         Log.v("VAL", "up keycode: " + event.getKeyCode());
         if (keyCode==66){
-            boolean bool = ClavierFragment.calcul();
-            if (bool == false){
+            Integer i = ClavierFragment.calcul();
+            if (i == 0){
                 Toast.makeText(this, "Rien à calculer", Toast.LENGTH_SHORT).show();
+            }
+            else if (i == 1){
+                Toast.makeText(this, "Impossible à calculer", Toast.LENGTH_SHORT).show();
             }
         }
         return super.onKeyUp(keyCode, event);

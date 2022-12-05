@@ -26,7 +26,7 @@ public class ClassiqueFragment extends Fragment {
     private static TextView calcul;
     private static TextView result;
     public static CalculiClass eval;
-    public static int result_of_calc=0;
+    public static Integer result_of_calc=0;
 
     private Button button1;
     private Button button2;
@@ -174,11 +174,13 @@ public class ClassiqueFragment extends Fragment {
         buttonEgale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                boolean bool = calcul();
-                if (bool == false){
+                Integer i = calcul();
+                if (i == 0){
                     Toast.makeText(root.getContext(), "Rien à calculer", Toast.LENGTH_SHORT).show();
                 }
-
+                else if (i == 1){
+                    Toast.makeText(root.getContext(), "Impossible à calculer", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         buttonParentheseDebut.setOnClickListener(new View.OnClickListener() {
@@ -225,16 +227,18 @@ public class ClassiqueFragment extends Fragment {
         binding = null;
     }
 
-    public static boolean calcul(){
+    public static Integer calcul(){
         String text = calcul.getText().toString();
         if (text == null || text.length() == 0) {
-            return false;
+            return 0;
         }
         result_of_calc = eval.evaluate(calcul.getText().toString());
-        Log.v("Alexia:",Integer.toString(result_of_calc));
+        if (result_of_calc==null){
+            return 1;
+        }
         result.setText(calcul.getText().toString()+" = "+Integer.toString(result_of_calc));
         calcul.setText("");
-        return true;
+        return 2;
     }
 
 }
