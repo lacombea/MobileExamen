@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -173,7 +174,11 @@ public class ClassiqueFragment extends Fragment {
         buttonEgale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                calcul();
+                boolean bool = calcul();
+                if (bool == false){
+                    Toast.makeText(root.getContext(), "Rien à calculer", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         buttonParentheseDebut.setOnClickListener(new View.OnClickListener() {
@@ -201,6 +206,7 @@ public class ClassiqueFragment extends Fragment {
             public void onClick(View v) {
                 String text = calcul.getText().toString();
                 if (text == null || text.length() == 0) {
+                    Toast.makeText(root.getContext(), "Rien à supprimer", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Log.v("Alexia: before", (text));
@@ -219,15 +225,16 @@ public class ClassiqueFragment extends Fragment {
         binding = null;
     }
 
-    public static void calcul(){
+    public static boolean calcul(){
         String text = calcul.getText().toString();
         if (text == null || text.length() == 0) {
-            return;
+            return false;
         }
         result_of_calc = eval.evaluate(calcul.getText().toString());
         Log.v("Alexia:",Integer.toString(result_of_calc));
         result.setText(calcul.getText().toString()+" = "+Integer.toString(result_of_calc));
         calcul.setText("");
+        return true;
     }
 
 }

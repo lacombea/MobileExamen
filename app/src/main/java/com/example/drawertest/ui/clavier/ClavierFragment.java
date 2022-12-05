@@ -50,13 +50,14 @@ public class ClavierFragment extends Fragment {
         binding = null;
     }
 
-    public static void calcul(){
+    public static boolean calcul(){
         String text = input.getText().toString();
         if (text == null || text.length() == 0) {
-            return;
+            return false;
         }
         result_of_calc = eval.evaluate(input.getText().toString());
         Log.v("Alexia:",Integer.toString(result_of_calc));
         result.setText(Integer.toString(result_of_calc));
+        return true;
     }
 }

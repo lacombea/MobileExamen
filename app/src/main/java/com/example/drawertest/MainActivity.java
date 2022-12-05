@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.drawertest.ui.clavier.ClavierFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -85,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onKeyUp (int keyCode, KeyEvent event) {
         Log.v("VAL", "up keycode: " + event.getKeyCode());
         if (keyCode==66){
-            ClavierFragment.calcul();
+            boolean bool = ClavierFragment.calcul();
+            if (bool == false){
+                Toast.makeText(this, "Rien à calculer", Toast.LENGTH_SHORT).show();
+            }
         }
         return super.onKeyUp(keyCode, event);
     }
