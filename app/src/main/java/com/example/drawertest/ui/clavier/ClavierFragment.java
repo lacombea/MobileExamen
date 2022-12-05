@@ -51,6 +51,10 @@ public class ClavierFragment extends Fragment {
     }
 
     public static void calcul(){
+        String text = input.getText().toString();
+        if (text == null || text.length() == 0) {
+            return;
+        }
         result_of_calc = eval.evaluate(input.getText().toString());
         Log.v("Alexia:",Integer.toString(result_of_calc));
         result.setText(Integer.toString(result_of_calc));

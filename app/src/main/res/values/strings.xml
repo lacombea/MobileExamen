@@ -18,9 +18,9 @@
 
     <!--    String used for calculate -->
     <string name="buttonBack">Back</string>
-    <string name="buttonNegatif">+/-</string>
+    <string name="buttonParentheseDebut">(</string>
+    <string name="buttonParentheseFin">)</string>
     <string name="buttonAC">AC</string>
-    <string name="buttonPourcent">%</string>
     <string name="buttonDivision">/</string>
     <string name="button7">7</string>
     <string name="button8">8</string>
@@ -35,7 +35,6 @@
     <string name="button3">3</string>
     <string name="buttonAddition">+</string>
     <string name="button0">0</string>
-    <string name="buttonVirgule">,</string>
     <string name="buttonEgale">=</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>

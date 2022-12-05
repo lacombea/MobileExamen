@@ -68,26 +68,24 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void addKeyListener() {
-            calcInput.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                //Log.v("TEST:",);
-                //eval.evaluate(calcInput.getText().toString());
-                //Log.v("TEST:",calcInput.getText().toString());
-
-                return true;
-            }
-        });
-    }
+//    public void addKeyListener() {
+//            calcInput.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//                //Log.v("TEST:",);
+//                //eval.evaluate(calcInput.getText().toString());
+//                //Log.v("TEST:",calcInput.getText().toString());
+//
+//                return true;
+//            }
+//        });
+//    }
 
     @Override
     public boolean onKeyUp (int keyCode, KeyEvent event) {
         Log.v("VAL", "up keycode: " + event.getKeyCode());
         if (keyCode==66){
             ClavierFragment.calcul();
-//            result_of_calc=eval.evaluate(calcInput.getText().toString());
-//            Log.v("Val:",Integer.toString(result_of_calc));
         }
         return super.onKeyUp(keyCode, event);
     }
