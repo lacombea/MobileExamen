@@ -77,6 +77,9 @@ public class CalculiClass {
 
                 operators.push(index[i]);
             }
+            else{
+                return null;
+            }
         }
 
         while (!operators.empty())
